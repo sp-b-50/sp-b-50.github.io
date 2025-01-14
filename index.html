@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hello Bulma!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        <script src="scripts/script.js"></script>
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="field is-horizontal">
+                    <input id="input-character-set" class="input" type="text" placeholder="Character set" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+                    <input id="input-num-chars" class="input" type="number" min="1" max="20" step="1" placeholder="Number of characters" value="3" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />
+                    <input id="input-num-results" class="input" type="number" min="1" max="20" step="1" placeholder="Number of results" value="5" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />
+                    <input id="input-char-restriction" class="input" type="number" min="0" step="1" placeholder="Number of unique first characters (0 for max)" value="0" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />
+                </div>
+                <div class="content">
+                    <ul id="order-list">
+                        <li class="notification is-info is-light" draggable="true" ondragover="dragOver(event)" ondragstart="dragStart(event)">Apples</li>
+                        <li class="notification is-info is-light" draggable="true" ondragover="dragOver(event)" ondragstart="dragStart(event)">Oranges</li>
+                        <li class="notification is-info is-light" draggable="true" ondragover="dragOver(event)" ondragstart="dragStart(event)">Bananas</li>
+                        <li class="notification is-info is-light" draggable="true" ondragover="dragOver(event)" ondragstart="dragStart(event)">Strawberries</li>
+                    </ul>
+                </div>
+
+                <div class="field is-horizontal">
+                    <button id="generate-button" class="button is-primary" onclick="generateClicked()">Generate</button>
+                    <label id="time-label" class="label"></p>
+                </div>
+            </div>
+        </section>
+        <script>
+            generateClicked();
+        </script>
+    </body>
+</html>
